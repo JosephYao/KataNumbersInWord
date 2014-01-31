@@ -4,11 +4,15 @@ import static org.junit.Assert.assertEquals;
 
 public class TestNumbersInWord {
 
+    NumbersInWord convertor = new NumbersInWord();
+
     @Test
     public void _0() {
-        NumbersInWord convertor = new NumbersInWord();
-        String actualWord = convertor.convert(0);
-        assertEquals("zero", actualWord);
+        assertEquals("zero", convertor.convert(0));
     }
 
+    @Test
+    public void _1() {
+        assertEquals("one", convertor.convert(1));
+    }
 }

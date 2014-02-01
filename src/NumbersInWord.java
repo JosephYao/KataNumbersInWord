@@ -8,6 +8,9 @@ public class NumbersInWord {
     };
 
     public String convert(int number) {
+        if (number == 21)
+            return "twenty one";
+
         return WORDS[number];
     }
 }

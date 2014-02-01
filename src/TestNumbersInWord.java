@@ -36,7 +36,8 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void _21() {
+    public void _21_22() {
         assertEquals("twenty one", convertor.convert(21));
+        assertEquals("twenty two", convertor.convert(22));
     }
 }

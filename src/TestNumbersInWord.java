@@ -36,8 +36,9 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void _21_22() {
+    public void less_than_30_convert_to_two_words() {
         assertEquals("twenty one", convertor.convert(21));
         assertEquals("twenty two", convertor.convert(22));
+        assertEquals("twenty nine", convertor.convert(29));
     }
 }

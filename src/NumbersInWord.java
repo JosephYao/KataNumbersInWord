@@ -8,7 +8,7 @@ public class NumbersInWord {
     };
 
     public String convert(int number) {
-        if (number == 21 || number == 22)
+        if (number > 20)
             return WORDS[20] + " " + WORDS[number - 20];
 
         return WORDS[number];

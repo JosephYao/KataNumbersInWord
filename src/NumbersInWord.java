@@ -8,9 +8,6 @@ public class NumbersInWord {
     };
 
     public String convert(int number) {
-        if (number == 31)
-            return "thirty one";
-
         if (number == 30)
             return "thirty";
 

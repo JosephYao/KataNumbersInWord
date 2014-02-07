@@ -1,9 +1,10 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.NavigableMap;
+import java.util.TreeMap;
 
 public class NumbersInWord {
 
-    public static final Map<Integer, String> WORDS = new HashMap<Integer, String>() {{
+    public static final NavigableMap<Integer, String> WORDS =
+            new TreeMap<Integer, String>() {{
         put(0, "zero"); put(1, "one"); put(2, "two"); put(3, "three");
         put(4, "four"); put(5, "five"); put(6, "six"); put(7, "seven");
         put(8, "eight"); put(9, "nine"); put(10, "ten"); put(11, "eleven");
@@ -16,6 +17,10 @@ public class NumbersInWord {
         if (WORDS.containsKey(number))
             return WORDS.get(number);
 
-        return WORDS.get(20) + " " + WORDS.get(number - 20);
+        return WORDS.get(closestOneWordNumber(number)) + " " + WORDS.get(number - closestOneWordNumber(number));
+    }
+
+    private int closestOneWordNumber(int number) {
+        return WORDS.floorKey(number);
     }
 }

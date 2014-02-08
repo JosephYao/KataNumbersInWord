@@ -12,6 +12,8 @@ public class NumbersInWord {
         put(16, "sixteen"); put(17, "seventeen"); put(18, "eighteen"); put(19, "nineteen");
         put(20, "twenty"); put(30, "thirty"); put(40, "forty"); put(50, "fifty");
         put(60, "sixty"); put(70, "seventy"); put(80, "eighty"); put(90, "ninety");
+
+        put(100, get(1) + " hundred");
     }};
 
     public String convert(int number) {

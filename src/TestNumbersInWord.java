@@ -50,4 +50,9 @@ public class TestNumbersInWord {
         assertEquals("thirty one", convertor.convert(31));
     }
 
+    @Test
+    public void _100() {
+        assertEquals("one hundred", convertor.convert(100));
+    }
+
 }

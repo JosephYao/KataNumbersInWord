@@ -58,6 +58,11 @@ public class TestNumbersInWord {
     @Test
     public void three_digits_convert_to_one_number_string_with_two_words_and_another_word() {
         assertEquals("one hundred one", convertor.convert(101));
+        assertEquals("one hundred eleven", convertor.convert(111));
     }
 
+    @Test
+    public void three_digits_convert_to_one_number_string_with_two_words_and_another_two_words() {
+        assertEquals("one hundred twenty one", convertor.convert(121));
+    }
 }

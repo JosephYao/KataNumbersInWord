@@ -20,7 +20,7 @@ public class NumbersInWord {
         if (WORDS.containsKey(number))
             return WORDS.get(number);
 
-        return WORDS.get(closestOneWordNumber(number)) + " " + WORDS.get(number - closestOneWordNumber(number));
+        return WORDS.get(closestOneWordNumber(number)) + " " + convert(number - closestOneWordNumber(number));
     }
 
     private int closestOneWordNumber(int number) {

@@ -14,15 +14,13 @@ public class NumbersInWord {
         put(16, "sixteen"); put(17, "seventeen"); put(18, "eighteen"); put(19, "nineteen");
         put(20, "twenty"); put(30, "thirty"); put(40, "forty"); put(50, "fifty");
         put(60, "sixty"); put(70, "seventy"); put(80, "eighty"); put(90, "ninety");
-
-        put(100, get(1) + WORD_DELIMITER + HUNDRED); put(200, get(2) + WORD_DELIMITER + HUNDRED);
-        put(300, get(3) + WORD_DELIMITER + HUNDRED); put(400, get(4) + WORD_DELIMITER + HUNDRED);
-        put(500, get(5) + WORD_DELIMITER + HUNDRED); put(600, get(6) + WORD_DELIMITER + HUNDRED);
-        put(700, get(7) + WORD_DELIMITER + HUNDRED); put(800, get(8) + WORD_DELIMITER + HUNDRED);
-        put(900, get(9) + WORD_DELIMITER + HUNDRED);
     }};
 
     public String convert(int number) {
+        if (number >= 100)
+            return convert(number / 100) + WORD_DELIMITER + HUNDRED +
+                   (number % 100 != 0 ? WORD_DELIMITER + convert(number % 100) : "");
+
         if (NUMBER_STRINGS.containsKey(number))
             return NUMBER_STRINGS.get(number);
 

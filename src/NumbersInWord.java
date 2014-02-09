@@ -3,10 +3,8 @@ import java.util.TreeMap;
 
 public class NumbersInWord {
 
-    private static final String HUNDRED = "hundred";
-    private static final String THOUSAND = "thousand";
     private static final String WORD_DELIMITER = " ";
-    public static final NavigableMap<Integer, String> NUMBER_STRINGS =
+    public static final NavigableMap<Integer, String> NUMBERS_TO_ONE_WORD =
             new TreeMap<Integer, String>() {{
         put(0, "zero"); put(1, "one"); put(2, "two"); put(3, "three");
         put(4, "four"); put(5, "five"); put(6, "six"); put(7, "seven");
@@ -17,22 +15,38 @@ public class NumbersInWord {
         put(60, "sixty"); put(70, "seventy"); put(80, "eighty"); put(90, "ninety");
     }};
 
+    public static final NavigableMap<Integer, String> COUNTING_UNIT_WORD = new TreeMap<Integer, String>() {{
+        put(1000, "thousand");
+        put(100, "hundred");
+    }};
+
     public String convert(int number) {
-        if (number == 1000 || number == 2000)
-            return convert(number / 1000) + WORD_DELIMITER + THOUSAND;
+        if (closestCountingUnitNumber(number) != null)
+            return convertInsideCountingUnit(number / closestCountingUnitNumber(number)) + WORD_DELIMITER +
+                   closestCountingUnitNumberString(number) +
+                   (number % closestCountingUnitNumber(number) != 0 ? WORD_DELIMITER +
+                   convertInsideCountingUnit(number % closestCountingUnitNumber(number)) : "");
 
-        if (number >= 100)
-            return convert(number / 100) + WORD_DELIMITER + HUNDRED +
-                   (number % 100 != 0 ? WORD_DELIMITER + convert(number % 100) : "");
+        return convertInsideCountingUnit(number);
+    }
 
-        if (NUMBER_STRINGS.containsKey(number))
-            return NUMBER_STRINGS.get(number);
+    private String closestCountingUnitNumberString(int number) {
+        return COUNTING_UNIT_WORD.floorEntry(number).getValue();
+    }
 
-        return NUMBER_STRINGS.get(closestOneWordNumber(number)) + WORD_DELIMITER +
-               convert(number - closestOneWordNumber(number));
+    private String convertInsideCountingUnit(int number) {
+        if (NUMBERS_TO_ONE_WORD.containsKey(number))
+            return NUMBERS_TO_ONE_WORD.get(number);
+        else
+            return NUMBERS_TO_ONE_WORD.get(closestOneWordNumber(number)) + WORD_DELIMITER +
+                   NUMBERS_TO_ONE_WORD.get(number - closestOneWordNumber(number));
+    }
+
+    private Integer closestCountingUnitNumber(int number) {
+        return COUNTING_UNIT_WORD.floorKey(number);
     }
 
     private int closestOneWordNumber(int number) {
-        return NUMBER_STRINGS.floorKey(number);
+        return NUMBERS_TO_ONE_WORD.floorKey(number);
     }
 }

@@ -79,4 +79,11 @@ public class TestNumbersInWord {
         assertEquals("one thousand", convertor.convert(1000));
         assertEquals("two thousand", convertor.convert(2000));
     }
+
+    @Test
+    public void four_digits() {
+        assertEquals("one thousand one", convertor.convert(1001));
+        assertEquals("one thousand two", convertor.convert(1002));
+        assertEquals("one thousand twenty two", convertor.convert(1022));
+    }
 }

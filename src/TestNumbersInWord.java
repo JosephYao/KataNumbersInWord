@@ -51,7 +51,7 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void three_and_four_digits_convert_to_one_number_string_with_two_words() {
+    public void three_digits_convert_to_one_number_string_with_two_words() {
         assertEquals("one hundred", convertor.convert(100));
         assertEquals("two hundred", convertor.convert(200));
         assertEquals("three hundred", convertor.convert(300));
@@ -61,7 +61,6 @@ public class TestNumbersInWord {
         assertEquals("seven hundred", convertor.convert(700));
         assertEquals("eight hundred", convertor.convert(800));
         assertEquals("nine hundred", convertor.convert(900));
-        assertEquals("one thousand", convertor.convert(1000));
     }
 
     @Test
@@ -75,8 +74,4 @@ public class TestNumbersInWord {
         assertEquals("one hundred twenty one", convertor.convert(121));
     }
 
-    @Test
-    public void acceptance_test() {
-        assertEquals("one thousand two hundred thirty four", convertor.convert(1234));
-    }
 }

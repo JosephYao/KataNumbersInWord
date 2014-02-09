@@ -70,7 +70,6 @@ public class TestNumbersInWord {
         assertEquals("seven thousand", convertor.convert(7000));
         assertEquals("eight thousand", convertor.convert(8000));
         assertEquals("nine thousand", convertor.convert(9000));
-        assertEquals("ten thousand", convertor.convert(10000));
     }
 
     @Test

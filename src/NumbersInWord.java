@@ -27,8 +27,6 @@ public class NumbersInWord {
         put(5000, get(5) + WORD_DELIMITER + THOUSAND); put(6000, get(6) + WORD_DELIMITER + THOUSAND);
         put(7000, get(7) + WORD_DELIMITER + THOUSAND); put(8000, get(8) + WORD_DELIMITER + THOUSAND);
         put(9000, get(9) + WORD_DELIMITER + THOUSAND);
-
-        put(10000, get(10) + WORD_DELIMITER + THOUSAND);
     }};
 
     public String convert(int number) {

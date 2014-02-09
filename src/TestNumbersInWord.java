@@ -73,4 +73,10 @@ public class TestNumbersInWord {
     public void three_digits_convert_to_one_number_string_with_two_words_and_another_two_words() {
         assertEquals("one hundred twenty one", convertor.convert(121));
     }
+
+    @Test
+    public void four_digits_convert_to_one_number_string_with_two_words() {
+        assertEquals("one thousand", convertor.convert(1000));
+        assertEquals("two thousand", convertor.convert(2000));
+    }
 }

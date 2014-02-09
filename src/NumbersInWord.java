@@ -4,6 +4,7 @@ import java.util.TreeMap;
 public class NumbersInWord {
 
     private static final String HUNDRED = "hundred";
+    private static final String THOUSAND = "thousand";
     private static final String WORD_DELIMITER = " ";
     public static final NavigableMap<Integer, String> NUMBER_STRINGS =
             new TreeMap<Integer, String>() {{
@@ -17,6 +18,9 @@ public class NumbersInWord {
     }};
 
     public String convert(int number) {
+        if (number == 1000 || number == 2000)
+            return convert(number / 1000) + WORD_DELIMITER + THOUSAND;
+
         if (number >= 100)
             return convert(number / 100) + WORD_DELIMITER + HUNDRED +
                    (number % 100 != 0 ? WORD_DELIMITER + convert(number % 100) : "");

@@ -53,14 +53,6 @@ public class TestNumbersInWord {
     @Test
     public void three_digits_convert_to_one_number_string_with_two_words() {
         assertEquals("one hundred", convertor.convert(100));
-        assertEquals("two hundred", convertor.convert(200));
-        assertEquals("three hundred", convertor.convert(300));
-        assertEquals("four hundred", convertor.convert(400));
-        assertEquals("five hundred", convertor.convert(500));
-        assertEquals("six hundred", convertor.convert(600));
-        assertEquals("seven hundred", convertor.convert(700));
-        assertEquals("eight hundred", convertor.convert(800));
-        assertEquals("nine hundred", convertor.convert(900));
     }
 
     @Test
@@ -73,5 +65,4 @@ public class TestNumbersInWord {
     public void three_digits_convert_to_one_number_string_with_two_words_and_another_two_words() {
         assertEquals("one hundred twenty one", convertor.convert(121));
     }
-
 }

@@ -3,8 +3,9 @@ import java.util.TreeMap;
 
 public class NumbersInWord {
 
-    private static final String HUNDRED = "hundred";
     private static final String WORD_DELIMITER = " ";
+    private static final String HUNDRED = "hundred";
+    private static final String THOUSAND = "thousand";
     private static final NavigableMap<Integer, String> NUMBER_STRINGS =
             new TreeMap<Integer, String>() {{
         put(0, "zero"); put(1, "one"); put(2, "two"); put(3, "three");
@@ -21,17 +22,22 @@ public class NumbersInWord {
         put(700, get(7) + WORD_DELIMITER + HUNDRED); put(800, get(8) + WORD_DELIMITER + HUNDRED);
         put(900, get(9) + WORD_DELIMITER + HUNDRED);
 
-        put(1000, get(1) + WORD_DELIMITER + "thousand");
+        put(1000, get(1) + WORD_DELIMITER + THOUSAND); put(2000, get(2) + WORD_DELIMITER + THOUSAND);
+        put(3000, get(3) + WORD_DELIMITER + THOUSAND); put(4000, get(4) + WORD_DELIMITER + THOUSAND);
+        put(5000, get(5) + WORD_DELIMITER + THOUSAND); put(6000, get(6) + WORD_DELIMITER + THOUSAND);
+        put(7000, get(7) + WORD_DELIMITER + THOUSAND); put(8000, get(8) + WORD_DELIMITER + THOUSAND);
+        put(9000, get(9) + WORD_DELIMITER + THOUSAND);
     }};
 
     public String convert(int number) {
         if (NUMBER_STRINGS.containsKey(number))
             return NUMBER_STRINGS.get(number);
 
-        return NUMBER_STRINGS.get(closestOneWordNumber(number)) + WORD_DELIMITER + convert(number - closestOneWordNumber(number));
+        return NUMBER_STRINGS.get(equalOrLessThanInNumberStrings(number)) + WORD_DELIMITER +
+               convert(number - equalOrLessThanInNumberStrings(number));
     }
 
-    private int closestOneWordNumber(int number) {
+    private int equalOrLessThanInNumberStrings(int number) {
         return NUMBER_STRINGS.floorKey(number);
     }
 }

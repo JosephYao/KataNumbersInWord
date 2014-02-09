@@ -62,6 +62,14 @@ public class TestNumbersInWord {
         assertEquals("eight hundred", convertor.convert(800));
         assertEquals("nine hundred", convertor.convert(900));
         assertEquals("one thousand", convertor.convert(1000));
+        assertEquals("two thousand", convertor.convert(2000));
+        assertEquals("three thousand", convertor.convert(3000));
+        assertEquals("four thousand", convertor.convert(4000));
+        assertEquals("five thousand", convertor.convert(5000));
+        assertEquals("six thousand", convertor.convert(6000));
+        assertEquals("seven thousand", convertor.convert(7000));
+        assertEquals("eight thousand", convertor.convert(8000));
+        assertEquals("nine thousand", convertor.convert(9000));
     }
 
     @Test

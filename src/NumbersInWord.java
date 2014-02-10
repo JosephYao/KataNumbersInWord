@@ -15,7 +15,9 @@ public class NumbersInWord {
         put(60, "sixty"); put(70, "seventy"); put(80, "eighty"); put(90, "ninety");
     }};
 
-    public static final NavigableMap<Integer, String> COUNTING_UNIT_WORD = new TreeMap<Integer, String>() {{
+    public static final NavigableMap<Integer, String> COUNTING_UNIT_WORD =
+            new TreeMap<Integer, String>() {{
+        put(1000000, "million");
         put(1000, "thousand");
         put(100, "hundred");
     }};

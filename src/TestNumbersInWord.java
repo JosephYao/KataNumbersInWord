@@ -96,4 +96,9 @@ public class TestNumbersInWord {
     public void number_string_include_hundred_in_reminder_after_divided_by_1000() {
         assertEquals("one thousand one hundred", convertor.convert(1100));
     }
+
+    @Test
+    public void _1000000() {
+        assertEquals("one million", convertor.convert(1000000));
+    }
 }

@@ -25,7 +25,7 @@ public class NumbersInWord {
             return convert(number / closestCountingUnitNumber(number)) + WORD_DELIMITER +
                    closestCountingUnitNumberString(number) +
                    (number % closestCountingUnitNumber(number) != 0 ? WORD_DELIMITER +
-                   convertInsideCountingUnit(number % closestCountingUnitNumber(number)) : "");
+                   convert(number % closestCountingUnitNumber(number)) : "");
 
         return convertInsideCountingUnit(number);
     }

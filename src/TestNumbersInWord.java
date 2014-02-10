@@ -88,7 +88,12 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void _100000() {
+    public void number_string_include_hundred_after_divided_by_1000() {
         assertEquals("one hundred thousand", convertor.convert(100000));
+    }
+
+    @Test
+    public void number_string_include_hundred_in_reminder_after_divided_by_1000() {
+        assertEquals("one thousand one hundred", convertor.convert(1100));
     }
 }

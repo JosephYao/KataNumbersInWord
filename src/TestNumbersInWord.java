@@ -101,4 +101,9 @@ public class TestNumbersInWord {
     public void _1000000() {
         assertEquals("one million", convertor.convert(1000000));
     }
+
+    @Test
+    public void acceptance_test() {
+        assertEquals("two hundred twenty two million two hundred twenty two thousand two hundred twenty two", convertor.convert(222222222));
+    }
 }

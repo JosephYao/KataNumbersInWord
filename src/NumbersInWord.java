@@ -22,7 +22,7 @@ public class NumbersInWord {
 
     public String convert(int number) {
         if (closestCountingUnitNumber(number) != null)
-            return convertInsideCountingUnit(number / closestCountingUnitNumber(number)) + WORD_DELIMITER +
+            return convert(number / closestCountingUnitNumber(number)) + WORD_DELIMITER +
                    closestCountingUnitNumberString(number) +
                    (number % closestCountingUnitNumber(number) != 0 ? WORD_DELIMITER +
                    convertInsideCountingUnit(number % closestCountingUnitNumber(number)) : "");

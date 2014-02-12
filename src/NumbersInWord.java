@@ -1,7 +1,8 @@
 public class NumbersInWord {
 
     private static final String[] WORDS = new String[]{
-            "zero", "one", "two"
+            "zero", "one", "two", "three", "four",
+            "five", "six", "seven", "eight", "nine"
     };
 
     public String convert(int number) {

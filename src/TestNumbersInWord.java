@@ -20,4 +20,19 @@ public class TestNumbersInWord {
         assertEquals("nine", convertor.convert(9));
     }
 
+    @Test
+    public void two_digits_until_20_convert_to_one_word() {
+        assertEquals("ten", convertor.convert(10));
+        assertEquals("eleven", convertor.convert(11));
+        assertEquals("twelve", convertor.convert(12));
+        assertEquals("thirteen", convertor.convert(13));
+        assertEquals("fourteen", convertor.convert(14));
+        assertEquals("fifteen", convertor.convert(15));
+        assertEquals("sixteen", convertor.convert(16));
+        assertEquals("seventeen", convertor.convert(17));
+        assertEquals("eighteen", convertor.convert(18));
+        assertEquals("nineteen", convertor.convert(19));
+        assertEquals("twenty", convertor.convert(20));
+    }
+
 }

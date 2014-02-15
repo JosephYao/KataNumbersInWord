@@ -21,7 +21,7 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void two_digits_until_20_convert_to_one_word() {
+    public void two_digits_convert_to_one_word() {
         assertEquals("ten", convertor.convert(10));
         assertEquals("eleven", convertor.convert(11));
         assertEquals("twelve", convertor.convert(12));
@@ -33,16 +33,12 @@ public class TestNumbersInWord {
         assertEquals("eighteen", convertor.convert(18));
         assertEquals("nineteen", convertor.convert(19));
         assertEquals("twenty", convertor.convert(20));
+        assertEquals("thirty", convertor.convert(30));
     }
 
     @Test
     public void two_digits_until_29_convert_to_two_words() {
         assertEquals("twenty one", convertor.convert(21));
         assertEquals("twenty two", convertor.convert(22));
-    }
-
-    @Test
-    public void _30() {
-        assertEquals("thirty", convertor.convert(30));
     }
 }

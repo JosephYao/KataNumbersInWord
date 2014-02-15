@@ -48,4 +48,8 @@ public class TestNumbersInWord {
         assertEquals("twenty two", convertor.convert(22));
     }
 
+    @Test
+    public void _100() {
+        assertEquals("one hundred", convertor.convert(100));
+    }
 }

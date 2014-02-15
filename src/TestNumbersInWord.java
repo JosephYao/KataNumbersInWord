@@ -35,4 +35,9 @@ public class TestNumbersInWord {
         assertEquals("twenty", convertor.convert(20));
     }
 
+    @Test
+    public void two_digits_until_29_convert_to_two_words() {
+        assertEquals("twenty one", convertor.convert(21));
+    }
+
 }

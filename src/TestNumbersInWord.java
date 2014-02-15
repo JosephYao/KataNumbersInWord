@@ -34,11 +34,23 @@ public class TestNumbersInWord {
         assertEquals("nineteen", convertor.convert(19));
         assertEquals("twenty", convertor.convert(20));
         assertEquals("thirty", convertor.convert(30));
+        assertEquals("forty", convertor.convert(40));
+        assertEquals("fifty", convertor.convert(50));
+        assertEquals("sixty", convertor.convert(60));
+        assertEquals("seventy", convertor.convert(70));
+        assertEquals("eighty", convertor.convert(80));
+        assertEquals("ninety", convertor.convert(90));
     }
 
     @Test
     public void two_digits_until_29_convert_to_two_words() {
         assertEquals("twenty one", convertor.convert(21));
         assertEquals("twenty two", convertor.convert(22));
+    }
+
+    @Test
+    public void _31_32() {
+        assertEquals("thirty one", convertor.convert(31));
+        assertEquals("thirty two", convertor.convert(32));
     }
 }

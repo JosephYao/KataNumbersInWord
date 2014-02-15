@@ -14,6 +14,7 @@ public class NumbersInWord {
         put(90, "ninety");
 
         put(100, "one hundred");
+        put(200, "two hundred");
     }};
 
     public String convert(int number) {

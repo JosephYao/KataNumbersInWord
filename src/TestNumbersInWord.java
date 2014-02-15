@@ -49,7 +49,8 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void _100() {
+    public void _100_200() {
         assertEquals("one hundred", convertor.convert(100));
+        assertEquals("two hundred", convertor.convert(200));
     }
 }

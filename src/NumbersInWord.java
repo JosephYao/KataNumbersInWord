@@ -18,11 +18,7 @@ public class NumbersInWord {
         if (NUMBER_TO_ONE_WORD.containsKey(number))
             return NUMBER_TO_ONE_WORD.get(number);
 
-        return NUMBER_TO_ONE_WORD.get(closestNumberToOneWord(number)) + " " +
-               NUMBER_TO_ONE_WORD.get(number - closestNumberToOneWord(number));
-    }
-
-    private Integer closestNumberToOneWord(int number) {
-        return NUMBER_TO_ONE_WORD.floorKey(number);
+        return NUMBER_TO_ONE_WORD.get(20) + " " +
+               NUMBER_TO_ONE_WORD.get(number - 20);
     }
 }

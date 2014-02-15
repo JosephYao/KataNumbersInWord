@@ -48,9 +48,4 @@ public class TestNumbersInWord {
         assertEquals("twenty two", convertor.convert(22));
     }
 
-    @Test
-    public void _31_32() {
-        assertEquals("thirty one", convertor.convert(31));
-        assertEquals("thirty two", convertor.convert(32));
-    }
 }

@@ -17,11 +17,11 @@ public class NumbersInWord {
     }};
 
     public String convert(int number) {
-        if (number != 0 && number % 100 == 0)
-            return NUMBER_TO_ONE_WORD.get(number / 100) + DELIMITER + HUNDRED;
-
         if (NUMBER_TO_ONE_WORD.containsKey(number))
             return NUMBER_TO_ONE_WORD.get(number);
+
+        if (number != 0 && number % 100 == 0)
+            return NUMBER_TO_ONE_WORD.get(number / 100) + DELIMITER + HUNDRED;
 
         return NUMBER_TO_ONE_WORD.get(20) + DELIMITER +
                NUMBER_TO_ONE_WORD.get(number - 20);

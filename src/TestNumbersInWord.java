@@ -49,8 +49,13 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void _100_200() {
+    public void hundreds_convert_to_two_words() {
         assertEquals("one hundred", convertor.convert(100));
         assertEquals("two hundred", convertor.convert(200));
     }
+
+//    @Test
+//    public void _1000() {
+//        assertEquals("one thousand", convertor.convert(1000));
+//    }
 }

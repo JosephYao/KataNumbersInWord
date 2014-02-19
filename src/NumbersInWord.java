@@ -3,7 +3,6 @@ import java.util.TreeMap;
 
 public class NumbersInWord {
 
-    private static final String HUNDRED = "hundred";
     private static final String DELIMITER = " ";
     private static final NavigableMap<Integer, String> NUMBER_TO_ONE_WORD = new TreeMap<Integer, String>(){{
         put(0, "zero"); put(1, "one"); put(2, "two"); put(3, "three"); put(4, "four");
@@ -14,16 +13,17 @@ public class NumbersInWord {
         put(20, "twenty"); put(30, "thirty"); put(40, "forty"); put(40, "forty");
         put(50, "fifty"); put(60, "sixty"); put(70, "seventy"); put(80, "eighty");
         put(90, "ninety");
-
-        put(1000, "one thousand");
     }};
 
     public String convert(int number) {
         if (NUMBER_TO_ONE_WORD.containsKey(number))
             return NUMBER_TO_ONE_WORD.get(number);
 
-        if (number != 0 && number % 100 == 0)
-            return NUMBER_TO_ONE_WORD.get(number / 100) + DELIMITER + HUNDRED;
+        if (number % 1000 == 0)
+            return NUMBER_TO_ONE_WORD.get(number / 1000) + DELIMITER + "thousand";
+
+        if (number % 100 == 0)
+            return NUMBER_TO_ONE_WORD.get(number / 100) + DELIMITER + "hundred";
 
         return NUMBER_TO_ONE_WORD.get(20) + DELIMITER +
                NUMBER_TO_ONE_WORD.get(number - 20);

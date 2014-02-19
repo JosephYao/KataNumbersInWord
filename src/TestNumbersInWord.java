@@ -55,7 +55,8 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void _1000() {
+    public void _1000_2000() {
         assertEquals("one thousand", convertor.convert(1000));
+        assertEquals("two thousand", convertor.convert(2000));
     }
 }

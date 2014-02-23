@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class NumbersInWord {
 
@@ -15,9 +14,11 @@ public class NumbersInWord {
         put(90, "ninety");
     }};
 
-    private static final Map<Integer, String> COUNTING_UNIT_TO_ONE_WORD = new HashMap<Integer, String>(){{
+    private static final SortedMap<Integer, String> COUNTING_UNIT_TO_ONE_WORD =
+            new TreeMap<Integer, String>(Collections.reverseOrder()){{
         put(100, "hundred");
         put(1000, "thousand");
+        put(1000000, "million");
     }};
 
     public String convert(int number) {

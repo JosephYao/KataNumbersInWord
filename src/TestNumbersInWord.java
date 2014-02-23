@@ -55,8 +55,13 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void _1000_2000() {
+    public void thousands_convert_to_two_words() {
         assertEquals("one thousand", convertor.convert(1000));
         assertEquals("two thousand", convertor.convert(2000));
+    }
+
+    @Test
+    public void millions_convert_to_two_words() {
+        assertEquals("one million", convertor.convert(1000000));
     }
 }

@@ -14,8 +14,8 @@ public class NumbersInWord {
         put(90, "ninety");
     }};
 
-    private static final SortedMap<Integer, String> COUNTING_UNIT_TO_ONE_WORD =
-            new TreeMap<Integer, String>(Collections.reverseOrder()){{
+    private static final NavigableMap<Integer, String> COUNTING_UNIT_TO_ONE_WORD =
+            new TreeMap<Integer, String>(){{
         put(100, "hundred");
         put(1000, "thousand");
         put(1000000, "million");
@@ -25,12 +25,15 @@ public class NumbersInWord {
         if (NUMBER_TO_ONE_WORD.containsKey(number))
             return NUMBER_TO_ONE_WORD.get(number);
 
-        for (Integer countingUnit : COUNTING_UNIT_TO_ONE_WORD.keySet())
-            if (number % countingUnit == 0)
-                return NUMBER_TO_ONE_WORD.get(number / countingUnit) + DELIMITER +
-                       COUNTING_UNIT_TO_ONE_WORD.get(countingUnit);
+        if (closestCountingUnit(number) != null)
+            return NUMBER_TO_ONE_WORD.get(number / closestCountingUnit(number)) + DELIMITER +
+                   COUNTING_UNIT_TO_ONE_WORD.get(closestCountingUnit(number));
 
         return NUMBER_TO_ONE_WORD.get(20) + DELIMITER +
                NUMBER_TO_ONE_WORD.get(number - 20);
+    }
+
+    private Integer closestCountingUnit(int number) {
+        return COUNTING_UNIT_TO_ONE_WORD.floorKey(number);
     }
 }

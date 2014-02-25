@@ -43,9 +43,11 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void two_digits_until_29_convert_to_two_words() {
+    public void two_digits_convert_to_two_words() {
         assertEquals("twenty one", convertor.convert(21));
         assertEquals("twenty two", convertor.convert(22));
+        assertEquals("thirty one", convertor.convert(31));
+        assertEquals("thirty two", convertor.convert(32));
     }
 
     @Test
@@ -64,4 +66,5 @@ public class TestNumbersInWord {
     public void millions_convert_to_two_words() {
         assertEquals("one million", convertor.convert(1000000));
     }
+
 }

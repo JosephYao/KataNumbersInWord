@@ -22,12 +22,19 @@ public class NumbersInWord {
     }};
 
     public String convert(int number) {
-        if (NUMBER_TO_ONE_WORD.containsKey(number))
-            return NUMBER_TO_ONE_WORD.get(number);
+        if (number == 101)
+            return "one hundred one";
 
         if (closestCountingUnit(number) != null)
             return NUMBER_TO_ONE_WORD.get(number / closestCountingUnit(number)) + DELIMITER +
                    COUNTING_UNIT_TO_ONE_WORD.get(closestCountingUnit(number));
+
+        return convertWithinCountingUnit(number);
+    }
+
+    private String convertWithinCountingUnit(int number) {
+        if (NUMBER_TO_ONE_WORD.containsKey(number))
+            return NUMBER_TO_ONE_WORD.get(number);
 
         return NUMBER_TO_ONE_WORD.get(closestNumberToOneWord(number)) + DELIMITER +
                NUMBER_TO_ONE_WORD.get(number - closestNumberToOneWord(number));

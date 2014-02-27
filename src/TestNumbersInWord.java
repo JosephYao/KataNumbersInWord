@@ -68,7 +68,8 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void _101() {
+    public void one_hundred_and_single_digit_convert_to_three_words() {
         assertEquals("one hundred one", convertor.convert(101));
+        assertEquals("one hundred two", convertor.convert(102));
     }
 }

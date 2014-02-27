@@ -22,8 +22,9 @@ public class NumbersInWord {
     }};
 
     public String convert(int number) {
-        if (number == 101)
-            return "one hundred one";
+        if (number == 101 || number == 102)
+            return NUMBER_TO_ONE_WORD.get(1) + DELIMITER +
+                    COUNTING_UNIT_TO_ONE_WORD.get(100) + DELIMITER + NUMBER_TO_ONE_WORD.get(number - 100);
 
         if (closestCountingUnit(number) != null)
             return NUMBER_TO_ONE_WORD.get(number / closestCountingUnit(number)) + DELIMITER +

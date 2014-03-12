@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.NavigableMap;
+import java.util.TreeMap;
 
 public class NumbersInWord {
 
@@ -22,9 +23,9 @@ public class NumbersInWord {
     }};
 
     public String convert(int number) {
-        if (number == 101 || number == 102)
-            return NUMBER_TO_ONE_WORD.get(1) + DELIMITER +
-                    COUNTING_UNIT_TO_ONE_WORD.get(100) + DELIMITER + NUMBER_TO_ONE_WORD.get(number - 100);
+        if (number == 101 || number == 102 || number == 201)
+            return NUMBER_TO_ONE_WORD.get(number / 100) + DELIMITER +
+                    COUNTING_UNIT_TO_ONE_WORD.get(100) + DELIMITER + NUMBER_TO_ONE_WORD.get(number % 100);
 
         if (closestCountingUnit(number) != null)
             return NUMBER_TO_ONE_WORD.get(number / closestCountingUnit(number)) + DELIMITER +

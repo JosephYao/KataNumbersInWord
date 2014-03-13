@@ -73,4 +73,10 @@ public class TestNumbersInWord {
         assertEquals("one hundred two", convertor.convert(102));
         assertEquals("two hundred one", convertor.convert(201));
     }
+
+    @Test
+    public void _121() {
+        assertEquals("one hundred twenty one", convertor.convert(121));
+    }
+
 }

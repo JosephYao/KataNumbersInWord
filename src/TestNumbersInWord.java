@@ -75,8 +75,9 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void _121() {
+    public void hundreds_convert_to_four_words() {
         assertEquals("one hundred twenty one", convertor.convert(121));
+        assertEquals("nine hundred ninety nine", convertor.convert(999));
     }
 
 }

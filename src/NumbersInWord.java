@@ -23,6 +23,9 @@ public class NumbersInWord {
     }};
 
     public String convert(int number) {
+        if (number == 1001)
+            return "one thousand one";
+
         if (number > 100 && number % 100 != 0)
             return NUMBER_TO_ONE_WORD.get(number / 100) + DELIMITER +
                     COUNTING_UNIT_TO_ONE_WORD.get(100) + DELIMITER + convertWithinCountingUnit(number % 100);

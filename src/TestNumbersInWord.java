@@ -81,8 +81,9 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void _1001() {
+    public void one_thousand_and_single_digit() {
         assertEquals("one thousand one", convertor.convert(1001));
+        assertEquals("one thousand two", convertor.convert(1002));
     }
 
 }

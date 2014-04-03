@@ -81,10 +81,10 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void one_thousand_and_single_digit_convert_to_number_counting_unit_number_format() {
+    public void thousands_convert_to_one_number_word_and_one_counting_unit_word_and_one_number_word() {
         assertEquals("one thousand one", convertor.convert(1001));
         assertEquals("one thousand two", convertor.convert(1002));
-//        assertEquals("two thousand one", convertor.convert(2001));
+        assertEquals("two thousand one", convertor.convert(2001));
     }
 
 }

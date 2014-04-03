@@ -7,7 +7,7 @@ public class TestNumbersInWord {
     NumbersInWord convertor = new NumbersInWord();
 
     @Test
-    public void single_digit_convert_to_one_word() {
+    public void single_digit_convert_to_one_number_word() {
         assertEquals("zero", convertor.convert(0));
         assertEquals("one", convertor.convert(1));
         assertEquals("two", convertor.convert(2));
@@ -21,7 +21,7 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void two_digits_convert_to_one_word() {
+    public void double_digits_convert_to_one_number_word() {
         assertEquals("ten", convertor.convert(10));
         assertEquals("eleven", convertor.convert(11));
         assertEquals("twelve", convertor.convert(12));
@@ -43,7 +43,7 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void two_digits_convert_to_two_words() {
+    public void double_digits_convert_to_two_number_words() {
         assertEquals("twenty one", convertor.convert(21));
         assertEquals("twenty two", convertor.convert(22));
         assertEquals("thirty one", convertor.convert(31));
@@ -51,39 +51,40 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void hundreds_convert_to_two_words() {
+    public void hundreds_convert_to_one_number_word_and_one_counting_unit_word() {
         assertEquals("one hundred", convertor.convert(100));
         assertEquals("two hundred", convertor.convert(200));
     }
 
     @Test
-    public void thousands_convert_to_two_words() {
+    public void thousands_convert_to_one_number_word_and_one_counting_unit_word() {
         assertEquals("one thousand", convertor.convert(1000));
         assertEquals("two thousand", convertor.convert(2000));
     }
 
     @Test
-    public void millions_convert_to_two_words() {
+    public void millions_convert_to_one_number_word_and_one_counting_unit_word() {
         assertEquals("one million", convertor.convert(1000000));
     }
 
     @Test
-    public void hundreds_and_single_digit_convert_to_three_words() {
+    public void hundreds_convert_to_number_counting_unit_number_format() {
         assertEquals("one hundred one", convertor.convert(101));
         assertEquals("one hundred two", convertor.convert(102));
         assertEquals("two hundred one", convertor.convert(201));
     }
 
     @Test
-    public void hundreds_convert_to_four_words() {
+    public void hundreds_convert_to_number_counting_unit_number_number_format() {
         assertEquals("one hundred twenty one", convertor.convert(121));
         assertEquals("nine hundred ninety nine", convertor.convert(999));
     }
 
     @Test
-    public void one_thousand_and_single_digit() {
+    public void one_thousand_and_single_digit_convert_to_number_counting_unit_number_format() {
         assertEquals("one thousand one", convertor.convert(1001));
         assertEquals("one thousand two", convertor.convert(1002));
+//        assertEquals("two thousand one", convertor.convert(2001));
     }
 
 }

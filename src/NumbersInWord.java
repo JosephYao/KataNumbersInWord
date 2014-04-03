@@ -23,16 +23,16 @@ public class NumbersInWord {
     }};
 
     public String convert(int number) {
-        if (closestCountingUnit(number) != null && number % closestCountingUnit(number) != 0)
-            return NUMBER_TO_ONE_WORD.get(number / closestCountingUnit(number)) + DELIMITER +
-                   COUNTING_UNIT_TO_ONE_WORD.get(closestCountingUnit(number)) + DELIMITER +
-                   convertWithinCountingUnit(number % closestCountingUnit(number));
-
         if (closestCountingUnit(number) != null)
             return NUMBER_TO_ONE_WORD.get(number / closestCountingUnit(number)) + DELIMITER +
-                   COUNTING_UNIT_TO_ONE_WORD.get(closestCountingUnit(number));
+                   COUNTING_UNIT_TO_ONE_WORD.get(closestCountingUnit(number)) +
+                   convertWithinCountingUnitAsNeeded(number);
 
         return convertWithinCountingUnit(number);
+    }
+
+    private String convertWithinCountingUnitAsNeeded(int number) {
+        return (number % closestCountingUnit(number) != 0 ? DELIMITER + convertWithinCountingUnit(number % closestCountingUnit(number)) : "");
     }
 
     private String convertWithinCountingUnit(int number) {

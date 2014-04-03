@@ -23,7 +23,7 @@ public class NumbersInWord {
     }};
 
     public String convert(int number) {
-        if (number == 1001 || number == 1002 || number == 2001 || number == 1021)
+        if (number > 1000 && number % 1000 < 100 && number % 1000 != 0)
             return NUMBER_TO_ONE_WORD.get(number / 1000) + DELIMITER +
                    COUNTING_UNIT_TO_ONE_WORD.get(1000) + DELIMITER + convertWithinCountingUnit(number % 1000);
 

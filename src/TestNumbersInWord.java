@@ -88,8 +88,9 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void _1021() {
+    public void thousands_convert_to_one_number_word_and_one_counting_unit_word_and_two_number_words() {
         assertEquals("one thousand twenty one", convertor.convert(1021));
+        assertEquals("nine thousand ninety nine", convertor.convert(9099));
     }
 
 }

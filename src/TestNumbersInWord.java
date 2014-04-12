@@ -93,4 +93,9 @@ public class TestNumbersInWord {
         assertEquals("nine thousand ninety nine", convertor.convert(9099));
     }
 
+    @Test
+    public void _1101() {
+        assertEquals("one thousand one hundred one", convertor.convert(1101));
+    }
+
 }

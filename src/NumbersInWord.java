@@ -23,12 +23,12 @@ public class NumbersInWord {
     }};
 
     public String convert(int number) {
-        if (number == 1101)
-            return NUMBER_TO_ONE_WORD.get(1) + DELIMITER +
-                   COUNTING_UNIT_TO_ONE_WORD.get(1000) + DELIMITER +
-                   NUMBER_TO_ONE_WORD.get(1) + DELIMITER +
-                   COUNTING_UNIT_TO_ONE_WORD.get(100) + DELIMITER +
-                   NUMBER_TO_ONE_WORD.get(1);
+        if (number == 1101 || number == 2101)
+            return NUMBER_TO_ONE_WORD.get(number / 1000) + DELIMITER +
+                    COUNTING_UNIT_TO_ONE_WORD.get(1000) + DELIMITER +
+                    NUMBER_TO_ONE_WORD.get(1) + DELIMITER +
+                    COUNTING_UNIT_TO_ONE_WORD.get(100) + DELIMITER +
+                    NUMBER_TO_ONE_WORD.get(1);
 
         if (closestCountingUnit(number) != null)
             return NUMBER_TO_ONE_WORD.get(number / closestCountingUnit(number)) + DELIMITER +

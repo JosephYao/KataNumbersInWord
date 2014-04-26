@@ -24,7 +24,7 @@ public class NumbersInWord {
 
     public String convert(int number) {
         if (closestCountingUnit(number) != null)
-            return NUMBER_TO_ONE_WORD.get(number / closestCountingUnit(number)) + DELIMITER +
+            return convertWithinCountingUnit(number / closestCountingUnit(number)) + DELIMITER +
                    COUNTING_UNIT_TO_ONE_WORD.get(closestCountingUnit(number)) +
                    convertWithinCountingUnitAsNeeded(number);
 

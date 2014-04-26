@@ -102,4 +102,9 @@ public class TestNumbersInWord {
         assertEquals("one million one thousand one", convertor.convert(1001001));
     }
 
+    @Test
+    public void two_number_words_and_one_counting_unit_word() {
+        assertEquals("twenty one thousand", convertor.convert(21000));
+    }
+
 }

@@ -94,15 +94,12 @@ public class TestNumbersInWord {
     }
 
     @Test
-    public void thousands_and_hundreds() {
+    public void two_counting_unit_words_and_one_number_word() {
         assertEquals("one thousand one hundred one", convertor.convert(1101));
         assertEquals("two thousand one hundred one", convertor.convert(2101));
         assertEquals("one thousand two hundred one", convertor.convert(1201));
-    }
-
-    @Test
-    public void _1000101() {
         assertEquals("one million one hundred one", convertor.convert(1000101));
+        assertEquals("one million one thousand one", convertor.convert(1001001));
     }
 
 }

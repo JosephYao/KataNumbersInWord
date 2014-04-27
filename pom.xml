@@ -24,7 +24,24 @@
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>4.2</version>
             </plugin>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <configuration>
+                    <targetClasses>
+                        <param>NumbersInWord</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>TestNumbersInWord</param>
+                    </targetTests>
+                    <outputFormats>
+                        <outputFormat>XML</outputFormat>
+                    </outputFormats>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+
 
 </project>

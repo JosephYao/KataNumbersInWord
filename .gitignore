@@ -1,3 +1,6 @@
 .idea
 KataNumbersInWord.iml
 out
+lib
+.DS_Store
+target

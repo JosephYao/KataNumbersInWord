@@ -10,8 +10,8 @@ public class NumbersInWord {
         put(10, "ten"); put(11, "eleven"); put(12, "twelve"); put(13, "thirteen");
         put(14, "fourteen"); put(15, "fifteen"); put(16, "sixteen"); put(17, "seventeen");
         put(18, "eighteen"); put(19, "nineteen");
-        put(20, "twenty"); put(30, "thirty"); put(40, "forty"); put(40, "forty");
-        put(50, "fifty"); put(60, "sixty"); put(70, "seventy"); put(80, "eighty");
+        put(20, "twenty"); put(30, "thirty"); put(40, "forty"); put(50, "fifty");
+        put(60, "sixty"); put(70, "seventy"); put(80, "eighty");
         put(90, "ninety");
     }};
 
@@ -32,7 +32,7 @@ public class NumbersInWord {
     }
 
     private String convertWithinCountingUnitAsNeeded(int number) {
-        return (number % closestCountingUnit(number) != 0 ? DELIMITER + convert(number % closestCountingUnit(number)) : "");
+        return number % closestCountingUnit(number) != 0 ? DELIMITER + convert(number % closestCountingUnit(number)) : "";
     }
 
     private String convertWithinCountingUnit(int number) {

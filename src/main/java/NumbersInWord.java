@@ -6,8 +6,8 @@ public class NumbersInWord {
         "eleven", "twelve", "thirteen", "fourteen", "fifteen",
         "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
 
-        if (number == 21)
-            return numberWords[20] + " " + numberWords[1];
+        if (number > 20)
+            return numberWords[20] + " " + numberWords[number - 20];
 
         return numberWords[number];
     }

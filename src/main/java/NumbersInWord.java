@@ -1,9 +1,8 @@
 public class NumbersInWord {
 
     public String convert(int number) {
-        if (number == 1)
-            return "one";
+        String[] numberWords = {"zero", "one", "two"};
 
-        return "zero";
+        return numberWords[number];
     }
 }

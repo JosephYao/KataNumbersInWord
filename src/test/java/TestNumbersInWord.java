@@ -7,12 +7,9 @@ public class TestNumbersInWord {
     NumbersInWord convertor = new NumbersInWord();
 
     @Test
-    public void _0_convert_to_zero() {
+    public void single_digit_convert_to_one_word() {
         assertEquals("zero", convertor.convert(0));
-    }
-
-    @Test
-    public void _1_convert_to_one() {
         assertEquals("one", convertor.convert(1));
+        assertEquals("two", convertor.convert(2));
     }
 }

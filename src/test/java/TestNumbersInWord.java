@@ -29,10 +29,7 @@ public class TestNumbersInWord {
         assertEquals("eighteen", convertor.convert(18));
         assertEquals("nineteen", convertor.convert(19));
         assertEquals("twenty", convertor.convert(20));
+        assertEquals("thirty", convertor.convert(30));
     }
 
-//    @Test
-//    public void _30_convert_to_thirty() {
-//        assertEquals("thirty", convertor.convert(30));
-//    }
 }
